@@ -4,7 +4,7 @@ import org.apache.openejb.testing.ApplicationComposers;
 import org.apache.openejb.testing.Classes;
 import org.apache.openejb.testing.EnableServices;
 import org.rapidpm.demo.embedded.tomee.service.rest.PeopleResource;
-import org.rapidpm.demo.embedded.tomee.service.soap.PeopleWSImpl;
+import org.rapidpm.demo.embedded.tomee.service.soap.PeopleWebService;
 
 /**
  * Created by sven on 22.05.15.
@@ -12,7 +12,8 @@ import org.rapidpm.demo.embedded.tomee.service.soap.PeopleWSImpl;
 
 
 @EnableServices(jaxws = true, jaxrs = true, httpDebug = false)
-@Classes(context = "/", value = {PeopleResource.class, PeopleWSImpl.class})
+//@Classes(context = "/", value = {PeopleResource.class, PeopleWSImpl.class, MessageServlet.class, Service.class})
+@Classes(context = "/", value = {PeopleResource.class, PeopleWebService.class})
 public class MyApp {
   public static void main(final String[] args) {
 
